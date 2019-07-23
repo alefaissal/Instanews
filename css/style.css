@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* apply a natural box layout model to all elements,
+ but allowing components to change */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* General styles */
+html {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: black;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    margin: 150px auto;
+}
+
+header div {
+    margin: 0 auto;
+}
+
+.head-menu {
+    text-align: center;
+    margin: 10px;
+}
+
+#times-menu {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+/* Footer */
+footer {
+    color: #c2c2c2;
+}
+
+footer p {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+
+/* ####################################################################################
+From here down only cody for Tablet   ############################ */
+/*Tablet*/
+@media screen and (min-width: 600px) {}
+
+
+/* ####################################################################################
+From here down only cody for Tablet   ############################ */
+/*Desktop*/
+@media screen and (min-width: 1000px) {}

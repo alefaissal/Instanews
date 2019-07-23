@@ -1,12 +1,12 @@
-const gulp = require("gulp"),
-    terser = require("gulp-terser"),
-    rename = require("gulp-rename"),
+const gulp = require('gulp'),
+    terser = require('gulp-terser'),
+    rename = require('gulp-rename'),
     browserSync = require('browser-sync'),
-    cssnano = require("gulp-cssnano"),
+    cssnano = require('gulp-cssnano'),
     autoprefixer = require('gulp-autoprefixer'),
-    eslint = require("gulp-eslint");
+    eslint = require('gulp-eslint');
 
-gulp.task("lint", function () {
+gulp.task('lint', function () {
     return (
         gulp
             .src('./js/*.js')
@@ -16,35 +16,35 @@ gulp.task("lint", function () {
     );
 });
 
-gulp.task("scripts",
+gulp.task('scripts',
     gulp.series('lint',
         function () {
 
             return gulp
-                .src(".js/*.js")
+                .src('.js/*.js')
                 .pipe(terser())
-                .pipe(rename({ extname: ".min.js" }))
-                .pipe(gulp.dest("./build/js"));
+                .pipe(rename({ extname: '.min.js' }))
+                .pipe(gulp.dest('./build/js'));
         }));
 
 
-gulp.task("styles", function () {
+gulp.task('styles', function () {
     return gulp
-        .src("./css/*.css")
+        .src('./css/*.css')
         .pipe(autoprefixer(
             {
                 browsers: ['last 2 versions']
             }
         ))
         .pipe(cssnano())
-        .pipe(rename({ extname: ".min.css" }))
-        .pipe(gulp.dest("./build/css"));
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task("watch", function () {
-    gulp.watch("js/*.js", gulp.series("scripts"));
-    gulp.watch("css/*.css", gulp.series("styles"));
-    gulp.watch("*.html").on('change', browserSync.reload);
+gulp.task('watch', function () {
+    gulp.watch('js/*.js', gulp.series('scripts'));
+    gulp.watch('css/*.css', gulp.series('styles'));
+    gulp.watch('*.html').on('change', browserSync.reload);
 });
 
 // Static server
@@ -60,4 +60,4 @@ gulp.task('browser-sync', function () {
 });
 
 
-gulp.task("default", gulp.parallel("browser-sync", "watch"));
+gulp.task('default', gulp.parallel('browser-sync', 'watch'));
