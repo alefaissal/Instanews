@@ -13,6 +13,8 @@ $(function () {
 
     //Function to load the articles (img, text and link)
     function loadArticles(selected) {
+
+        $('ul').html('');
         $.getJSON('https://api.nytimes.com/svc/topstories/v2/' +
             selected + '.json?api-key=F1xf3ui78H7Qu4HpUjn3uwmx5wpEr0V2')
             .done(function (data) {
