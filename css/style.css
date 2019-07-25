@@ -59,6 +59,9 @@ header div {
 /* Footer */
 footer {
     color: #c2c2c2;
+    padding: 20px 0;
+    margin: 20px 0;
+
 }
 
 footer p {
@@ -70,6 +73,9 @@ span {
     text-transform: uppercase;
 }
 
+ul div {
+    height: 50px;
+}
 
 /* ####################################################################################
 From here down only cody for Tablet   ############################ */
