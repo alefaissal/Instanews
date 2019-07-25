@@ -8,6 +8,8 @@ $(function () {
         if (selected !== '') {
             console.log('The value picked is ' + selected);
             loadArticles(selected);
+        } else {
+            $('ul').html('');
         }
     });
 
