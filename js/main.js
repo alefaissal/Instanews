@@ -6,10 +6,11 @@ $(function () {
     $('#times-menu').on('change', function () {
         const selected = $(this).val();
         if (selected !== '') {
-            //console.log('The value picked is ' + selected);
+            console.log('The value picked is ' + selected);
             loadArticles(selected);
         }
     });
+
     //Function to load the articles (img, text and link)
     function loadArticles(selected) {
         $.getJSON('https://api.nytimes.com/svc/topstories/v2/' +
@@ -28,7 +29,7 @@ $(function () {
                 function appendingToAJAX(newsUrl, abstract, backImage) {
                     contentToBeAppend =
                         '<li><a href =' + newsUrl +
-                        '><div style="background: url(' + backImage + ')">' +
+                        '><div style="background: url(' + backImage + ')  no-repeat center; background-size: cover;">' +
                         '<article>' +
                         '<p>' +
                         abstract +

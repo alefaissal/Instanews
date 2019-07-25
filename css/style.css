@@ -56,6 +56,43 @@ header div {
     margin: 10px;
 }
 
+/* news go here */
+
+li {
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+ul div {
+    height: 400px;
+    max-width: 100%;
+}
+
+article {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    text-align: left;
+    padding: 10px;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background-size: cover;
+    min-height: 25%;
+}
+
+
 /* Footer */
 footer {
     color: #c2c2c2;
@@ -73,17 +110,43 @@ span {
     text-transform: uppercase;
 }
 
-ul div {
-    height: 50px;
-}
+
+
 
 /* ####################################################################################
 From here down only cody for Tablet   ############################ */
 /*Tablet*/
-@media screen and (min-width: 600px) {}
+@media screen and (min-width: 480px) {
 
+    header {
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+
+
+    header div {
+        margin: 0;
+    }
+
+    li {
+        width: 50%;
+    }
+}
 
 /* ####################################################################################
 From here down only cody for Tablet   ############################ */
 /*Desktop*/
-@media screen and (min-width: 1000px) {}
+@media screen and (min-width: 1000px) {
+    header {
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+
+    header div {
+        margin: 0;
+    }
+
+    li {
+        width: 25%;
+    }
+}
