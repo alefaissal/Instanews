@@ -6,19 +6,13 @@
 
 *:focus {
     outline: none;
+    border: 1px solid red;
 }
 
 /* apply a natural box layout model to all elements,
  but allowing components to change */
 html {
-    box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
 }
 
 /* General styles */
@@ -29,6 +23,13 @@ html {
     font-weight: 300;
     font-style: normal;
     background-color: black;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 
 
@@ -57,6 +58,10 @@ header div {
 }
 
 /* news go here */
+.loading {
+    margin: 0 auto;
+    width: 50px;
+}
 
 li {
     width: 100%;
@@ -118,9 +123,11 @@ From here down only cody for Tablet   ############################ */
 /*Tablet*/
 @media screen and (min-width: 480px) {
 
+
     header {
         flex-flow: row nowrap;
         align-items: center;
+        margin: 50px auto;
     }
 
 
@@ -140,6 +147,7 @@ From here down only cody for Tablet   ############################ */
     header {
         flex-flow: row nowrap;
         align-items: center;
+        margin: 50px auto;
     }
 
     header div {

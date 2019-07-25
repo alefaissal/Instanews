@@ -4,6 +4,7 @@ $(function () {
 
     //whats is going to happen after change on selection menu
     $('#times-menu').on('change', function () {
+        $('.loading').append('<img class="loading-gif" src="images/ajax-loader.gif" alt="loading gif" height="40px" width="40px">');
         const selected = $(this).val();
         if (selected !== '') {
             console.log('The value picked is ' + selected);
@@ -11,6 +12,7 @@ $(function () {
         } else {
             $('ul').html('');
         }
+
     });
 
     //Function to load the articles (img, text and link)
@@ -50,9 +52,13 @@ $(function () {
                 //     console.log("forEach", article);
                 // });
 
+                const filteredArticles = articlesArray.filter((value) => {
+                    return value.multimedia[4] !== undefined;
+                }).slice(0, 12);
 
+                console.log(filteredArticles);
 
-                $.each(articlesArray, function (index, article) {
+                $.each(filteredArticles, function (index, article) {
 
                     // defining the variables
                     backImage = article.multimedia[4].url;
@@ -73,6 +79,8 @@ $(function () {
 
             })
             .always(function () {
+                $('.loading').html('');
+                console.log("this is working");
 
             });
     }
