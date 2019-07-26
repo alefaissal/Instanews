@@ -4,6 +4,7 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync'),
     cssnano = require('gulp-cssnano'),
     sass = require('gulp-sass'),
+    prettyError = require('gulp-prettyerror'),
     autoprefixer = require('gulp-autoprefixer'),
     eslint = require('gulp-eslint');
 
@@ -44,6 +45,7 @@ gulp.task('scripts',
 
 gulp.task('watch', function () {
     gulp.watch('js/*.js', gulp.series('scripts'));
+    gulp.watch('sass/*.scss', gulp.series('sass'));
     // gulp.watch('css/*.css', gulp.series('styles'));
     gulp.watch('*.html').on('change', browserSync.reload);
 });
@@ -51,6 +53,7 @@ gulp.task('watch', function () {
 gulp.task('sass', function () {
     return gulp
         .src('./sass/style.scss')
+        .pipe(prettyError()) //line added
         .pipe(sass())
         .pipe(
             autoprefixer({
