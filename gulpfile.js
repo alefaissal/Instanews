@@ -23,7 +23,7 @@ gulp.task('scripts',
         function () {
 
             return gulp
-                .src('.js/*.js')
+                .src('./js/*.js')
                 .pipe(terser())
                 .pipe(rename({ extname: '.min.js' }))
                 .pipe(gulp.dest('./build/js'));
@@ -58,7 +58,7 @@ gulp.task('sass', function () {
         .pipe(
             autoprefixer({
                 browsers: ['last 2 versions'],
-            }),
+            })
         )
         .pipe(gulp.dest('./build/css'))
         .pipe(cssnano())
