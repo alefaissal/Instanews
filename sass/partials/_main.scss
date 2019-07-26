@@ -1,0 +1,131 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+    border: 1px solid red;
+}
+
+/* apply a natural box layout model to all elements,
+ but allowing components to change */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General styles */
+html {
+    font-size: $basic-fontSize;
+    color: $text-color;
+    font-family: 'Open Sans light', sans-serif;
+    background-color: $background-color;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    margin: 150px auto;
+
+    @include tablet {
+        flex-flow: row nowrap;
+        align-items: center;
+        margin: 50px auto;
+    }
+
+}
+
+header div {
+    margin: 0 auto;
+
+    @include tablet {
+        margin: 0;
+    }
+
+}
+
+.head-menu {
+    text-align: center;
+    margin: 10px;
+}
+
+#times-menu {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+/* news go here */
+.loading {
+    margin: 0 auto;
+    width: 50px;
+}
+
+li {
+    width: 100%;
+
+    @include tablet {
+        width: 50%;
+    }
+
+    @include desktop {
+        width: 25%;
+    }
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+ul div {
+    height: 400px;
+    max-width: 100%;
+}
+
+article {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+}
+
+p {
+    @include text-news();
+    padding: 10px;
+    min-height: 25%;
+}
+
+
+/* Footer */
+footer {
+    color: #c2c2c2;
+    padding: 20px 0;
+    margin: 20px 0;
+
+}
+
+footer p {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+span {
+    text-transform: uppercase;
+}

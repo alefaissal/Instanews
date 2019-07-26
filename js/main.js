@@ -11,6 +11,7 @@ $(function () {
             loadArticles(selected);
         } else {
             $('ul').html('');
+            $('.loading').html('');
         }
 
     });
