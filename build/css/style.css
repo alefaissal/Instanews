@@ -211,6 +211,10 @@ header {
           -ms-flex-align: center;
               align-items: center;
       margin: 50px auto; } }
+  @media (min-width: 1000px) {
+    header {
+      margin-left: 80px;
+      margin-top: 200px; } }
 
 header div {
   margin: 0 auto; }
@@ -283,6 +287,10 @@ footer {
 footer p {
   text-align: center;
   vertical-align: bottom; }
+  @media (min-width: 1000px) {
+    footer p {
+      text-align: left;
+      margin-left: 80px; } }
 
 span {
   text-transform: uppercase; }

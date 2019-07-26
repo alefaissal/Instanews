@@ -46,6 +46,11 @@ header {
         margin: 50px auto;
     }
 
+    @include desktop {
+        margin-left: 80px;
+        margin-top: 200px;
+    }
+
 }
 
 header div {
@@ -110,6 +115,8 @@ p {
     @include text-news();
     padding: 10px;
     min-height: 25%;
+
+
 }
 
 
@@ -124,6 +131,11 @@ footer {
 footer p {
     text-align: center;
     vertical-align: bottom;
+
+    @include desktop {
+        text-align: left;
+        margin-left: 80px;
+    }
 }
 
 span {
