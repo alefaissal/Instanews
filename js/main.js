@@ -4,21 +4,23 @@ $(function () {
 
     //whats is going to happen after change on selection menu
     $('#times-menu').on('change', function () {
-        $('.loading').append('<img class="loading-gif" src="images/ajax-loader.gif" alt="loading gif" height="40px" width="40px">');
+        $('.loading').append('<img class="loading-gif" src="images/newLoader.gif" alt="loading gif" height="60px" width="60px">');
         const selected = $(this).val();
         if (selected !== '') {
-            console.log('The value picked is ' + selected);
+            //console.log('The value picked is ' + selected);
             loadArticles(selected);
         } else {
             $('ul').html('');
-            $('.loading').html('');
+            setTimeout(() => {
+                $('.loading').html('');
+            }, 3000);
+
         }
 
     });
 
     //Function to load the articles (img, text and link)
     function loadArticles(selected) {
-
         $('ul').html('');
         $.getJSON('https://api.nytimes.com/svc/topstories/v2/' +
             selected + '.json?api-key=F1xf3ui78H7Qu4HpUjn3uwmx5wpEr0V2')
@@ -57,7 +59,7 @@ $(function () {
                     return value.multimedia[4] !== undefined;
                 }).slice(0, 12);
 
-                console.log(filteredArticles);
+                //console.log(filteredArticles);
 
                 $.each(filteredArticles, function (index, article) {
 
@@ -80,8 +82,10 @@ $(function () {
 
             })
             .always(function () {
-                $('.loading').html('');
-                console.log("this is working");
+                setTimeout(() => {
+                    $('.loading').html('');
+                }, 2000);
+                //console.log("this is working");
 
             });
     }
