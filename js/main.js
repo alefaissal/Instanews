@@ -38,7 +38,7 @@ $(function () {
                 function appendingToAJAX(newsUrl, abstract, backImage) {
                     contentToBeAppend =
                         '<li><a href =' + newsUrl +
-                        '><div style="background: url(' + backImage + ')  no-repeat center; background-size: cover;">' +
+                        ' target="_blank" ><div style="background: url(' + backImage + ')  no-repeat center; background-size: cover;">' +
                         '<article>' +
                         '<p>' +
                         abstract +
