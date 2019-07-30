@@ -8,10 +8,15 @@ $(function () {
         const selected = $(this).val();
         if (selected !== '') {
             //console.log('The value picked is ' + selected);
+            $('#logo').addClass('logo-animation');
+            $('#drop-menu').addClass('menu-animation');
             loadArticles(selected);
+
         } else {
             $('ul').html('');
-            setTimeout(() => {
+            $('#logo').removeClass('logo-animation');
+            $('#drop-menu').removeClass('menu-animation');
+            setTimeout(() => { // to slow down the loading gif
                 $('.loading').html('');
             }, 3000);
 
@@ -82,7 +87,7 @@ $(function () {
 
             })
             .always(function () {
-                setTimeout(() => {
+                setTimeout(() => {  // to slow down the loading gif
                     $('.loading').html('');
                 }, 2000);
                 //console.log("this is working");

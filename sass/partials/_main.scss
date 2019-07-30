@@ -6,7 +6,7 @@
 
 *:focus {
     outline: none;
-    border: 1px solid red;
+    border: 1px solid $focus-color;
 }
 
 /* apply a natural box layout model to all elements,
@@ -47,9 +47,10 @@ header {
     }
 
     @include desktop {
-        margin-left: 80px;
-        margin-top: 200px;
+        margin: 80px 80px;
     }
+
+
 
 }
 
@@ -140,4 +141,36 @@ footer p {
 
 span {
     text-transform: uppercase;
+}
+
+@keyframes logo-anime {
+    from {
+        transform: scale(1, 1)translate(0px, 0px);
+    }
+
+    to {
+        transform: scale(0.5, 0.5)translate(-600px, 0px);
+    }
+}
+
+.logo-animation {
+    @include desktop {
+        animation: logo-anime 0.5s forwards ease-in-out;
+    }
+}
+
+@keyframes menu-anime {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(-300px, 0px);
+    }
+}
+
+.menu-animation {
+    @include desktop {
+        animation: menu-anime 0.5s forwards ease-in-out;
+    }
 }
