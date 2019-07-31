@@ -44,22 +44,20 @@ header {
     @include tablet {
         flex-flow: row nowrap;
         align-items: center;
-        margin: 50px auto;
+        margin: 0px auto;
     }
 
     @include desktop {
-        margin: 80px 80px;
+        margin: 0px;
+        padding: 30px;
     }
-
-
-
 }
 
 header div {
     margin: 0 auto;
 
     @include tablet {
-        margin: 0;
+        margin: 0px;
     }
 
 }
