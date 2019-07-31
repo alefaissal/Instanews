@@ -18,7 +18,7 @@ $(function () {
             $('#drop-menu').removeClass('menu-animation');
             setTimeout(() => { // to slow down the loading gif
                 $('.loading').html('');
-            }, 3000);
+            }, 1000);
 
         }
 
@@ -89,7 +89,7 @@ $(function () {
             .always(function () {
                 setTimeout(() => {  // to slow down the loading gif
                     $('.loading').html('');
-                }, 2000);
+                }, 1000);
                 //console.log("this is working");
 
             });
