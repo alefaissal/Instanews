@@ -35,8 +35,6 @@ $(function () {
                 let newsUrl;    // assign to the url
                 let abstract;   //assign to the text
                 let contentToBeAppend;
-                //let cssToAppend;
-                //let cssObj;
 
 
                 //function to append every loop inside the <ul>

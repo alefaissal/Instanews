@@ -286,7 +286,8 @@ ul li p {
   min-height: 25%;
   position: absolute;
   left: 0;
-  bottom: 0; }
+  bottom: 0;
+  text-align: justify; }
   @media (min-width: 1000px) {
     ul li p {
       min-height: initial;
