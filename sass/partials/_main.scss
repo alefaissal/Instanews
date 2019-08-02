@@ -9,8 +9,6 @@
     border: 1px solid $focus-color;
 }
 
-/* apply a natural box layout model to all elements,
- but allowing components to change */
 html {
     scroll-behavior: smooth;
 }
@@ -38,18 +36,22 @@ header {
     height: 100%;
     justify-content: center;
     align-content: center;
-    margin: 150px auto;
+    margin: 100px auto;
     max-width: 100vw;
 
     @include tablet {
         flex-flow: row nowrap;
         align-items: center;
-        margin: 0px auto;
+        margin: 100px auto;
     }
 
     @include desktop {
         margin: 0px;
         padding: 30px;
+        justify-content: flex-start;
+        height: auto;
+        position: relative;
+        top: 200px;
     }
 }
 
@@ -104,6 +106,8 @@ article {
     display: flex;
     align-items: flex-end;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 a {
@@ -115,10 +119,14 @@ ul li p {
     @include text-news();
     padding: 10px;
     min-height: 25%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 
     @include desktop {
         //bottom: 0;
-        transform: translateY(2000px);
+        min-height: initial;
+        transform: translateY(100px);
         transition: transform 1s;
         z-index: -100;
     }
@@ -130,34 +138,6 @@ li:hover {
         z-index: 100;
     }
 }
-
-/////////////////
-// .card-text {
-//     padding: 0.625rem;
-//     position: absolute;
-//     bottom: 0;
-//     transform: translateY(100%);
-//     background: rgba($darkest-color, 0.6%);
-//     transition: transform 1s;
-// }
-
-// // .card-text
-// &:hover {
-//     img {
-//         opacity: 1;
-//         transform: scale(1.5);
-//     }
-
-//     .card-text {
-//         transform: translateY(0);
-//         // transition: transform 0.3s;
-//     }
-
-////////////////////////
-
-
-
-
 
 /* Footer */
 footer {
@@ -187,7 +167,7 @@ span {
     }
 
     to {
-        transform: scale(0.5, 0.5)translate(-750px, 0px);
+        transform: scale(0.5, 0.5)translate(0px, -380px);
     }
 }
 
@@ -203,7 +183,7 @@ span {
     }
 
     to {
-        transform: translate(-420px, 0px);
+        transform: translate(0px, -200px);
     }
 }
 

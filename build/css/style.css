@@ -160,8 +160,6 @@ table {
   outline: none;
   border: 1px solid red; }
 
-/* apply a natural box layout model to all elements,
- but allowing components to change */
 html {
   scroll-behavior: smooth; }
 
@@ -200,7 +198,7 @@ header {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 150px auto;
+  margin: 100px auto;
   max-width: 100vw; }
   @media (min-width: 480px) {
     header {
@@ -211,11 +209,17 @@ header {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      margin: 0px auto; } }
+      margin: 100px auto; } }
   @media (min-width: 1000px) {
     header {
       margin: 0px;
-      padding: 30px; } }
+      padding: 30px;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      height: auto;
+      position: relative;
+      top: 200px; } }
 
 header div {
   margin: 0 auto; }
@@ -265,7 +269,9 @@ article {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  height: 100%; }
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
 
 a {
   color: #fff;
@@ -277,11 +283,15 @@ ul li p {
   background-size: cover;
   text-align: left;
   padding: 10px;
-  min-height: 25%; }
+  min-height: 25%;
+  position: absolute;
+  left: 0;
+  bottom: 0; }
   @media (min-width: 1000px) {
     ul li p {
-      -webkit-transform: translateY(2000px);
-              transform: translateY(2000px);
+      min-height: initial;
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
       -webkit-transition: -webkit-transform 1s;
       transition: -webkit-transform 1s;
       transition: transform 1s;
@@ -315,16 +325,16 @@ span {
     -webkit-transform: scale(1, 1) translate(0px, 0px);
             transform: scale(1, 1) translate(0px, 0px); }
   to {
-    -webkit-transform: scale(0.5, 0.5) translate(-750px, 0px);
-            transform: scale(0.5, 0.5) translate(-750px, 0px); } }
+    -webkit-transform: scale(0.5, 0.5) translate(0px, -380px);
+            transform: scale(0.5, 0.5) translate(0px, -380px); } }
 
 @keyframes logo-anime {
   from {
     -webkit-transform: scale(1, 1) translate(0px, 0px);
             transform: scale(1, 1) translate(0px, 0px); }
   to {
-    -webkit-transform: scale(0.5, 0.5) translate(-750px, 0px);
-            transform: scale(0.5, 0.5) translate(-750px, 0px); } }
+    -webkit-transform: scale(0.5, 0.5) translate(0px, -380px);
+            transform: scale(0.5, 0.5) translate(0px, -380px); } }
 
 @media (min-width: 1000px) {
   .logo-animation {
@@ -336,16 +346,16 @@ span {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px); }
   to {
-    -webkit-transform: translate(-420px, 0px);
-            transform: translate(-420px, 0px); } }
+    -webkit-transform: translate(0px, -200px);
+            transform: translate(0px, -200px); } }
 
 @keyframes menu-anime {
   from {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px); }
   to {
-    -webkit-transform: translate(-420px, 0px);
-            transform: translate(-420px, 0px); } }
+    -webkit-transform: translate(0px, -200px);
+            transform: translate(0px, -200px); } }
 
 @media (min-width: 1000px) {
   .menu-animation {
