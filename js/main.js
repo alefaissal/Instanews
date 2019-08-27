@@ -1,23 +1,28 @@
 
 // All JS/jQuery and AJAX goes inside this function
 $(function () {
+    const $timesMenu = $('#times-menu');
+    const $timesLoading = $('.loading');
+    const $timesLogo = $('#logo');
+    const $timesDrogMenu = $('#drop-menu');
+    const $timesUl = $('ul');
 
     //whats is going to happen after change on selection menu
-    $('#times-menu').on('change', function () {
-        $('.loading').append('<img class="loading-gif" src="images/newLoader.gif" alt="loading gif" height="60px" width="60px">');
+    $timesMenu.on('change', function () {
+        $timesLoading.append('<img class="loading-gif" src="images/newLoader.gif" alt="loading gif" height="60px" width="60px">');
         const selected = $(this).val();
         if (selected !== '') {
             //console.log('The value picked is ' + selected);
-            $('#logo').addClass('logo-animation');
-            $('#drop-menu').addClass('menu-animation');
+            $timesLogo.addClass('logo-animation');
+            $timesDrogMenu.addClass('menu-animation');
             loadArticles(selected);
 
         } else {
-            $('ul').html('');
-            $('#logo').removeClass('logo-animation');
-            $('#drop-menu').removeClass('menu-animation');
+            $timesUl.html('');
+            $timesLogo.removeClass('logo-animation');
+            $timesDrogMenu.removeClass('menu-animation');
             setTimeout(() => { // to slow down the loading gif
-                $('.loading').html('');
+                $timesLoading.html('');
             }, 1000);
 
         }
@@ -26,7 +31,7 @@ $(function () {
 
     //Function to load the articles (img, text and link)
     function loadArticles(selected) {
-        $('ul').html('');
+        $timesUl.html('');
         $.getJSON('https://api.nytimes.com/svc/topstories/v2/' +
             selected + '.json?api-key=F1xf3ui78H7Qu4HpUjn3uwmx5wpEr0V2')
             .done(function (data) {
@@ -53,10 +58,6 @@ $(function () {
 
                 }
 
-                // Another way to do the loop
-                // articlesArray.forEach(function (article) {
-                //     console.log("forEach", article);
-                // });
 
                 const filteredArticles = articlesArray.filter((value) => {
                     return value.multimedia[4] !== undefined;
@@ -75,8 +76,7 @@ $(function () {
                     appendingToAJAX(newsUrl, abstract, backImage);
 
                     //Appending content to elements
-                    $('ul')
-                        .append(contentToBeAppend);
+                    $timesUl.append(contentToBeAppend);
                 });
 
             })
@@ -85,15 +85,11 @@ $(function () {
 
             })
             .always(function () {
-                setTimeout(() => {  // to slow down the loading gif
-                    $('.loading').html('');
+                setTimeout(() => { 
+                    $timesLoading.html('');
                 }, 1000);
-                //console.log("this is working");
 
             });
     }
-
-
-
 
 }); //end of document ready
