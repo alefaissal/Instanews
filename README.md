@@ -2,10 +2,8 @@
 
 In this project some new technologies were used like Jquery, SASS, CSS animation, AJAX, jSON and gulp.
 
-
-## Pre-requirements for the project
-
-All pre-requirements for this project were taken in consideration, according to the file from Red Academy for *Project 3*
+## Link to access the website
+https://alefaissal.github.io/Project3-Instanews/
 
 ## Versions
 All versions of the _**Instanews**_ are in GitHub for evaluation with comments, using present tense verbs and all new features added in each version.
