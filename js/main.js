@@ -12,7 +12,6 @@ $(function () {
         $timesLoading.append('<img class="loading-gif" src="images/newLoader.gif" alt="loading gif" height="60px" width="60px">');
         const selected = $(this).val();
         if (selected !== '') {
-            //console.log('The value picked is ' + selected);
             $timesLogo.addClass('logo-animation');
             $timesDrogMenu.addClass('menu-animation');
             loadArticles(selected);
@@ -24,9 +23,7 @@ $(function () {
             setTimeout(() => { // to slow down the loading gif
                 $timesLoading.html('');
             }, 1000);
-
         }
-
     });
 
     //Function to load the articles (img, text and link)
@@ -41,7 +38,6 @@ $(function () {
                 let abstract;   //assign to the text
                 let contentToBeAppend;
 
-
                 //function to append every loop inside the <ul>
                 function appendingToAJAX(newsUrl, abstract, backImage) {
                     contentToBeAppend =
@@ -55,15 +51,11 @@ $(function () {
                         '</div>' +
                         '</a>' +
                         '</li >';
-
                 }
-
 
                 const filteredArticles = articlesArray.filter((value) => {
                     return value.multimedia[4] !== undefined;
                 }).slice(0, 12);
-
-                //console.log(filteredArticles);
 
                 $.each(filteredArticles, function (index, article) {
 
@@ -78,18 +70,14 @@ $(function () {
                     //Appending content to elements
                     $timesUl.append(contentToBeAppend);
                 });
-
             })
             .fail(function (err) {
                 console.log(err);
-
             })
             .always(function () {
-                setTimeout(() => { 
+                setTimeout(() => {
                     $timesLoading.html('');
                 }, 1000);
-
             });
     }
-
 }); //end of document ready

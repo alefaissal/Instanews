@@ -28,7 +28,6 @@ body {
     justify-content: space-between;
 }
 
-
 /* Header */
 header {
     display: flex;
@@ -61,7 +60,6 @@ header div {
     @include tablet {
         margin: 0px;
     }
-
 }
 
 .head-menu {
@@ -125,7 +123,6 @@ ul li p {
     text-align: justify;
 
     @include desktop {
-        //bottom: 0;
         min-height: initial;
         transform: translateY(100px);
         transition: transform 1s;
@@ -145,7 +142,6 @@ footer {
     color: #c2c2c2;
     padding: 20px 0;
     margin: 20px 0;
-
 }
 
 footer p {
