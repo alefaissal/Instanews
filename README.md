@@ -25,6 +25,8 @@ All versions of the _**Instanews**_ are in GitHub for evaluation with comments, 
 This project was done by Alex Faissal, as an assigment for the Web Developer program from Red Academy.
 
 
-
+![ScreenShot](screenshot01.png)
+![ScreenShot](screenshot02.png)
+![ScreenShot](screenshot03.png)
 
 
