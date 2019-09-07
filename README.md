@@ -3,7 +3,7 @@
 In this project some new technologies were used like Jquery, SASS, CSS animation, AJAX, jSON and gulp.
 
 ## Link to access the website
-https://alefaissal.github.io/instanews/
+https://alefaissal.github.io/Instanews/
 
 ## Versions
 All versions of the _**Instanews**_ are in GitHub for evaluation with comments, using present tense verbs and all new features added in each version.
